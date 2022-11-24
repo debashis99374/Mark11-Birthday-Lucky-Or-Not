@@ -8,7 +8,7 @@ h1{
   color: mintcream;
   text-align: center;
   padding: 1cm;
-  margin-bottom: 1.5cm;
+  margin-bottom: 3cm;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -17,17 +17,29 @@ footer{
   color: mintcream;
   text-align: center;
   padding: .5cm;
-  margin-top: 8cm;
+  margin-top:3cm;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+label{
+  display: block;
+  font-size: large;
+  margin: 2rem 0px;
+  font-weight: 500;
+}
 input{
-  border: solid midnightblue;
-  margin: .5cm;
+  display: block;
+  margin: 1rem auto;
+  padding: 1px 2px;
+  border: 2px solid midnightblue;
+  border-radius: 5px;
+  width: 100%;
 }
 #ia{
   width: 3cm;
   margin: auto;
+  font-weight: 500;
+  
 }
 button{
   background-color: midnightblue;
@@ -35,4 +47,5 @@ button{
   padding: 1rem;
   border-radius: 20px;
   margin: 1rem;
+  cursor: pointer;
 }
