@@ -4,36 +4,33 @@ let bttnHandler = document.getElementById("bttn");
 let outPut = document.getElementById("txt-area");
 
 
-function birthdayLuckyCalculater(sum, luckyNumber) {
-  if (sum % luckyNumber.value) {
-    outPut.innerHTML = "Yuppy you are damn lucky!!";
-  } else {
-    outPut.innerHTML = "Sorry you are not so lucky!!";
+function birthdayLuckyChecker(dt){
+  var dt=birthDate.value;
+  var luckynumber=luckyNumber.value;
+  if(dt&&luckynumber){
+    if(luckynumber>0){
+      final(dt)
+    }else{
+      outPut.innerHTML="please enter positive number"
+    }
+    
+  }else{
+    outPut.innerHTML="please enter both fields"
   }
 }
 
-function birthdayLuckyChecker() {
-  dob = birthDate.value;
-  sum = addAllNumbers(dob);
-  if (sum && dob) {
-    birthdayLuckyCalculater(sum, luckyNumber.value)
-  } else {
-    outPut.innerHTML = "Invalid!!";
+function final(dt){
+  sum=0;
+  dt=dt.replaceAll("-","");
+  for(let i=0;i<dt.length;i++){
+    sum=sum+Number(dt[i]);
+    var luckynumber=luckyNumber.value;
+    if(sum%luckynumber===0){
+      outPut.innerHTML="Yuppy you are a lucky person"
+    }else{
+      outPut.innerHTML="sorry but you are cursed"
+    }
   }
-
-
-
 }
-function addAllNumbers(dob) {
-
-  dob = dob.replaceAll("-", "");
-  sum = 0;
-  for (let i = 0; i < dob.length; i++) {
-    sum = sum + Number(dob.charAt(i));
-    return sum
-  }
-
-}
-
 
 bttnHandler.addEventListener('click', birthdayLuckyChecker);
